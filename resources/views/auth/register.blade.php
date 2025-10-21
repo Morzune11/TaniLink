@@ -1,7 +1,6 @@
 @extends('layouts.auth')
 
-@section('content')
- 
+@section('content') 
 <div class="flex bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl w-full">
     
     <!-- Bagian Kiri (Gambar) -->
@@ -34,6 +33,7 @@
         <p class="text-gray-600 mb-6">Bergabung dengan komunitas petani lokal</p>
 
         <form method="GET" action="{{ route('insertUser') }}">
+            @csrf
             <div class="mb-4">
                 <label for="full_name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
                 <input type="text" name="name" id="full_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your name">

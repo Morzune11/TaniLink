@@ -21,9 +21,13 @@
                     Edit Profile
                 </a>
                 <a href="{{--  {{ route('logout') }}--}}" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 text-sm font-medium">
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1535713875002-d1d0cf8c95b1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="User Avatar">
-                    <span class="ml-2">Logout</span>
-                </a>
+                        <img class="h-8 w-8 rounded-full" src="images/{{ Auth::user()->profile_picture }}" alt="User Avatar">
+                </a>        
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+                </form>
+                
             </div>
         </div>
     </div>
